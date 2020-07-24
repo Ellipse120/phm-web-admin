@@ -15,7 +15,7 @@
             >
               <div style="display: flex;">
                 <sidebar-item-new v-for="route in permission_routes" :key="route.path" :item="route" :base-path="route.path" />
-                <el-menu-item><i class="el-icon-user"></i>系统管理员</el-menu-item>
+                <el-menu-item><i class="el-icon-user" />系统管理员</el-menu-item>
                 <el-menu-item @click="logout">注销</el-menu-item>
               </div>
             </el-menu>

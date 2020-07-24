@@ -15,15 +15,11 @@
             >
               <div style="display: flex;">
                 <sidebar-item-new v-for="route in permission_routes" :key="route.path" :item="route" :base-path="route.path" />
-                <el-menu-item>管理员</el-menu-item>
+                <el-menu-item><i class="el-icon-user"></i>系统管理员</el-menu-item>
                 <el-menu-item @click="logout">注销</el-menu-item>
               </div>
             </el-menu>
           </div>
-<!--          <div style="font-size: 14px;margin-left: 20px;">-->
-<!--            <span>管理员</span>-->
-<!--            <span style="margin-left: 20px;">注销</span>-->
-<!--          </div>-->
         </div>
       </div>
     </div>

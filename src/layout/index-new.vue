@@ -4,7 +4,7 @@
       <navbar-new />
     </div>
     <div>
-      <breadcrumb></breadcrumb>
+      <breadcrumb />
       <app-main />
     </div>
   </div>

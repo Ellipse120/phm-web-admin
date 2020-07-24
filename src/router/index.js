@@ -64,6 +64,12 @@ export const constantRoutes = [
         name: 'Tree',
         component: () => import('@/views/tree/index'),
         meta: { title: '车载故障', icon: 'tree' }
+      },
+      {
+        path: 'test',
+        name: 'Test',
+        component: () => import('@/views/test/line-chart'),
+        meta: { title: 'ECharts', icon: 'tree' }
       }
     ]
   }

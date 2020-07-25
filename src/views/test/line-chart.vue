@@ -3,11 +3,15 @@
     <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
       <line-chart :chart-data="lineChartData" />
     </el-row>
+    <el-row style="height: 600px;background:#fff;padding:16px 16px 0;">
+      <web-map />
+    </el-row>
   </div>
 </template>
 
 <script>
 import LineChart from '@/components/LineChart'
+import WebMap from '@/components/ArcGis'
 
 const lineChartData = {
   newVisitis: {
@@ -29,9 +33,10 @@ const lineChartData = {
 }
 
 export default {
-  name: '',
+  name: 'Test',
   components: {
-    LineChart
+    LineChart,
+    WebMap
   },
   data() {
     return {

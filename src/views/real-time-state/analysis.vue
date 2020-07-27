@@ -26,37 +26,37 @@
       :data="list"
     >
       <el-table-column
-        prop="trainGroup"
+        prop="trainNum"
         align="center"
         label="车组号"
       />
       <el-table-column
-        prop="faultCode"
+        prop="carriageNum"
         align="center"
-        label="故障代码"
+        label="车厢号"
       />
       <el-table-column
-        prop="remark"
+        prop="unitCode"
         align="center"
-        label="故障描述"
+        label="部件编码"
       />
       <el-table-column
-        prop="faultLevel"
+        prop="paraTypeCode"
         align="center"
-        label="故障级别"
+        label="参数类型编码"
       />
       <el-table-column
-        prop="date"
+        prop="paraValue"
         align="center"
-        label="故障发生时间"
+        label="参数值"
       />
       <el-table-column
-        prop="date"
+        prop="wtdsTime"
         align="center"
         label="采集时间"
       />
       <el-table-column
-        prop="date"
+        prop="putinTime"
         align="center"
         label="入库时间"
       />

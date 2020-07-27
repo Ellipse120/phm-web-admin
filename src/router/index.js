@@ -47,10 +47,10 @@ export const constantRoutes = [
     redirect: '/example/table1'
   },
   {
-    path: '/tempPath',
+    path: '/temp-path',
     component: Layout,
-    redirect: '/tempPath/real-time-fault',
-    name: 'Example',
+    redirect: '/temp-path/real-time-fault',
+    name: 'TempPath',
     meta: { title: '数据查看' },
     children: [
       {
@@ -59,12 +59,12 @@ export const constantRoutes = [
         component: () => import('@/views/real-time-fault/index'),
         meta: { title: '实时故障' }
       },
-      {
-        path: 'real-time-gps',
-        name: 'RealTimeGPS',
-        component: () => import('@/views/real-time-gps/index'),
-        meta: { title: '实时GPS' }
-      },
+      // {
+      //   path: 'real-time-gps',
+      //   name: 'RealTimeGPS',
+      //   component: () => import('@/views/real-time-gps/index'),
+      //   meta: { title: '实时GPS' }
+      // },
       {
         path: 'wtds-resolution-failure-detail',
         name: 'WTDSResolutionFailureDetail',
@@ -75,7 +75,7 @@ export const constantRoutes = [
         path: 'real-time-state',
         name: 'RealTimeState',
         component: () => import('@/views/real-time-state/index'),
-        meta: { title: '实时状态表' }
+        meta: { title: '实时状态' }
       }
     ]
   }

@@ -1,7 +1,7 @@
 <template>
   <el-header height="56px">
     <div class="header-container">
-      <div class="header-item">logo</div>
+      <div class="header-item">PHM</div>
       <div class="header-item">
         <div class="header-container">
           <div>

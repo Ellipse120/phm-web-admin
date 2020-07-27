@@ -47,29 +47,35 @@ export const constantRoutes = [
     redirect: '/example/table1'
   },
   {
-    path: '/example',
+    path: '/tempPath',
     component: Layout,
-    redirect: '/example/table1',
+    redirect: '/tempPath/real-time-fault',
     name: 'Example',
-    meta: { title: '健康监测', icon: 'el-icon-s-help' },
+    meta: { title: '数据查看' },
     children: [
       {
-        path: 'table1',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: '状态全景', icon: 'table' }
+        path: 'real-time-fault',
+        name: 'RealTimeFault',
+        component: () => import('@/views/real-time-fault/index'),
+        meta: { title: '实时故障' }
       },
       {
-        path: 'tree1',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: '车载故障', icon: 'tree' }
+        path: 'real-time-gps',
+        name: 'RealTimeGPS',
+        component: () => import('@/views/real-time-gps/index'),
+        meta: { title: '实时GPS' }
       },
       {
-        path: 'test',
-        name: 'Test',
-        component: () => import('@/views/test/line-chart'),
-        meta: { title: 'ECharts', icon: 'tree' }
+        path: 'wtds-resolution-failure-detail',
+        name: 'WTDSResolutionFailureDetail',
+        component: () => import('@/views/wtds-resolution-failure-detail/index'),
+        meta: { title: 'WTDS解析失败详情' }
+      },
+      {
+        path: 'real-time-state',
+        name: 'RealTimeState',
+        component: () => import('@/views/real-time-state/index'),
+        meta: { title: '实时状态表' }
       }
     ]
   }
@@ -81,6 +87,33 @@ export const constantRoutes = [
  */
 export const asyncRoutes = [
   {
+    path: '/example',
+    component: Layout,
+    redirect: '/example/table1',
+    name: 'Example',
+    meta: { title: '健康监测', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'table1',
+        name: 'Table',
+        component: () => import('@/views/table/index'),
+        meta: { title: '状态全景' }
+      },
+      {
+        path: 'tree1',
+        name: 'Tree',
+        component: () => import('@/views/tree/index'),
+        meta: { title: '车载故障' }
+      },
+      {
+        path: 'test',
+        name: 'Test',
+        component: () => import('@/views/test/line-chart'),
+        meta: { title: 'ECharts' }
+      }
+    ]
+  },
+  {
     path: '/example2',
     component: Layout,
     redirect: '/example2/table',
@@ -91,13 +124,13 @@ export const asyncRoutes = [
         path: 'table2',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: '故障预警', icon: 'table' }
+        meta: { title: '故障预警' }
       },
       {
         path: 'tree2',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '跟踪处置', icon: 'tree' }
+        meta: { title: '跟踪处置' }
       }
     ]
   },
@@ -110,7 +143,7 @@ export const asyncRoutes = [
         path: 'dashboard',
         name: 'Dashboard',
         component: () => import('@/views/dashboard/index'),
-        meta: { title: '视情维修', icon: 'dashboard' }
+        meta: { title: '视情维修' }
       }
     ]
   },
@@ -125,49 +158,49 @@ export const asyncRoutes = [
         path: 'table3',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: '换轮轮廓计划', icon: 'table' }
+        meta: { title: '换轮轮廓计划' }
       },
       {
         path: 'tree3',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '参数趋势分析', icon: 'tree' }
+        meta: { title: '参数趋势分析' }
       },
       {
         path: 'tree4',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '车轮多边形监测', icon: 'tree' }
+        meta: { title: '车轮多边形监测' }
       },
       {
         path: 'tree5',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '等效锥度监控', icon: 'tree' }
+        meta: { title: '等效锥度监控' }
       },
       {
         path: 'table4',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: '接触疲劳监控', icon: 'table' }
+        meta: { title: '接触疲劳监控' }
       },
       {
         path: 'tree6',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '磨耗规律分析', icon: 'tree' }
+        meta: { title: '磨耗规律分析' }
       },
       {
         path: 'tree7',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '镟修建议计划编制', icon: 'tree' }
+        meta: { title: '镟修建议计划编制' }
       },
       {
         path: 'tree8',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '径向跳动监控', icon: 'tree' }
+        meta: { title: '径向跳动监控' }
       }
     ]
   },
@@ -182,13 +215,13 @@ export const asyncRoutes = [
         path: 'table5',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: '全景图', icon: 'table' }
+        meta: { title: '全景图' }
       },
       {
         path: 'tree9',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '应急指挥辅助模块', icon: 'tree' }
+        meta: { title: '应急指挥辅助模块' }
       }
     ]
   },
@@ -201,7 +234,7 @@ export const asyncRoutes = [
         path: 'dashboard',
         name: 'Dashboard',
         component: () => import('@/views/dashboard/index'),
-        meta: { title: '数据分析', icon: 'dashboard' }
+        meta: { title: '数据分析' }
       }
     ]
   },
@@ -216,31 +249,31 @@ export const asyncRoutes = [
         path: 'table6',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: '重点故障管理', icon: 'table' }
+        meta: { title: '重点故障管理' }
       },
       {
         path: 'tree10',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '机检一级修管理', icon: 'tree' }
+        meta: { title: '机检一级修管理' }
       },
       {
         path: 'table7',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: '修程修制', icon: 'table' }
+        meta: { title: '修程修制' }
       },
       {
         path: 'tree11',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '高级修送修卡控', icon: 'tree' }
+        meta: { title: '高级修送修卡控' }
       },
       {
         path: 'tree12',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '健康评估', icon: 'tree' }
+        meta: { title: '健康评估' }
       }
     ]
   },
@@ -255,43 +288,43 @@ export const asyncRoutes = [
         path: 'table8',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: '车型管理', icon: 'table' }
+        meta: { title: '车型管理' }
       },
       {
         path: 'tree13',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '修程管理', icon: 'tree' }
+        meta: { title: '修程管理' }
       },
       {
         path: 'tree14',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '实时监控', icon: 'tree' }
+        meta: { title: '实时监控' }
       },
       {
         path: 'tree15',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '用户管理', icon: 'tree' }
+        meta: { title: '用户管理' }
       },
       {
         path: 'tree16',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '组织机构', icon: 'tree' }
+        meta: { title: '组织机构' }
       },
       {
         path: 'tree17',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '修改密码', icon: 'tree' }
+        meta: { title: '修改密码' }
       },
       {
         path: 'tree18',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '接口日志', icon: 'tree' }
+        meta: { title: '接口日志' }
       }
     ]
   },
@@ -308,7 +341,6 @@ const createRouter = () => new Router({
 
 const router = createRouter()
 
-// Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
 export function resetRouter() {
   const newRouter = createRouter()
   router.matcher = newRouter.matcher // reset router

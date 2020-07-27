@@ -26,7 +26,7 @@ const users = {
 module.exports = [
   // user login
   {
-    url: '/phm-app/user/login',
+    url: '/phm-web/user/login',
     type: 'post',
     response: config => {
       const { username } = config.body

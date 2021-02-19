@@ -13,6 +13,17 @@
       <el-col :xs="12" :sm="6" :md="6" :lg="6" :xl="4">
         <el-input placeholder="故障发生时间" title="故障发生时间"/>
       </el-col>
+      <el-col :xs="12" :sm="6" :md="6" :lg="6" :xl="4">
+        <el-select v-model="trainId" clearable filterable remote :filter-method="customFilter">
+          <recycle-scroller style="height: 100px;overflow-y: auto;width: 100%;" :items="filteredTrains" :item-size="32" key-field="key" v-slot="{ item }">
+            <el-option :key="item.key" :value="item.key" :label="item.value" />
+          </recycle-scroller>
+        </el-select>
+      </el-col>
+      <!-- <recycle-scroller style="height: 30px;overflow-y: auto;width: 100%;" :items="trains" :item-size="32" key-field="key" v-slot="{ item }">
+        <div style="height: 22px;overflow: auto;display: flex;align-items: center;">{{ item.value }}</div>
+      </recycle-scroller> -->
+
     </el-row>
     <el-row type="flex" justify="end" class="mb-10">
       <el-button icon="el-icon-close">清空</el-button>
@@ -75,14 +86,45 @@
 </template>
 
 <script>
+import generateList from './mock.js'
+import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'
+import { RecycleScroller } from 'vue-virtual-scroller'
+
 export default {
   name: 'Analysis',
+  components: {
+    'recycle-scroller': RecycleScroller
+  },
   data() {
     return {
-      list: []
+      trainId: null,
+      list: [],
+      trains: [],
+      filteredTrains: []
     }
   },
+  watch: {
+    trainId: function(newVal, oldVal) {
+      if (!newVal) {
+        this.filteredTrains = this.trains
+      }
+    }
+  },
+  created() {
+    this.trains = generateList(20000)
+    this.filteredTrains = [...this.trains]
+  },
   methods: {
+    customFilter(v) {
+      if (!v) {
+        this.filteredTrains = [...this.trains]
+      }
+      this.filteredTrains = [...this.trains].filter(o => {
+        return o.value.includes(v)
+      })
+      // return true
+    },
+
     handleCurrentChange(currentPage) {
       console.log(currentPage, ' currentPage')
     },

@@ -54,9 +54,9 @@ export const constantRoutes = [
     meta: { title: '数据查看' },
     children: [
       {
-        path: 'real-time-fault',
+        path: '/real-time-fault',
         name: 'RealTimeFault',
-        component: () => import('@/views/real-time-fault/index'),
+        component: () => import('@/views/real-time-state/mock'),
         meta: { title: '实时故障' }
       },
       // {

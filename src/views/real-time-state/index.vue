@@ -44,7 +44,7 @@ export default {
           key: 'information'
         }
       ],
-      currentTab: 'condition'
+      currentTab: 'analysis'
     }
   },
   methods: {}

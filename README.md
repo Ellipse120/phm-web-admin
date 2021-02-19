@@ -1,6 +1,6 @@
-# PHM-WEB
+# PHM-WEB-ADMIN
 
-> Vuejs & Element UI & Axios & Iconfont & Permission Control & Lint
+> Vue.js & Element UI & Axios VirtualScroll & Iconfont & Permission Control & Lint
 
 **Live demo:** http://todo
 
@@ -54,4 +54,4 @@ Modern browsers and Internet Explorer 10+.
 | --------- | --------- | --------- | --------- |
 | IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions
 
-Copyright (c) 2020-present 申铁信息
+Copyright (c) 2020-present [@ellipse](https://twitter.com/ellipse_120)

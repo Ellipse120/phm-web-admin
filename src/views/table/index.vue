@@ -44,7 +44,12 @@
 </template>
 
 <script>
+import axios from 'axios'
 import { getList } from '@/api/table'
+import { getById } from './api'
+
+const CancelToken = axios.CancelToken
+let source
 
 export default {
   filters: {
@@ -67,12 +72,22 @@ export default {
     this.fetchData()
   },
   methods: {
-    fetchData() {
+    fetchData () {
       this.listLoading = true
       getList().then(response => {
         this.list = response.data.items
         this.listLoading = false
       })
+    },
+
+    async getDetail () {
+      source = CancelToken.source()
+      const res = await getById(id, source)
+      console.log(res)
+    },
+
+    doCancel () {
+      source && source.cancel('取消请求')
     }
   }
 }

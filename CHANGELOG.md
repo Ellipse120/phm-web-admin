@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/Ellipse120/phm-web-admin/compare/v1.0.0...v1.1.0) (2021-02-21)
+
+
+### Bug Fixes
+
+* typo ([ba5ac13](https://github.com/Ellipse120/phm-web-admin/commit/ba5ac13910e48aa75a6b92d9b33b3e68e885179d))
+
 ## [1.0.0](https://github.com/Ellipse120/phm-web-admin/compare/v0.1.0...v1.0.0) (2021-02-21)
 
 

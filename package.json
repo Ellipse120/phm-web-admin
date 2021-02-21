@@ -17,7 +17,8 @@
     "new-version": "npx lerna version --conventional-commits"
   },
   "workspaces": [
-    "*"
+    "packages/*",
+    "src/*"
   ],
   "husky": {
     "hooks": {

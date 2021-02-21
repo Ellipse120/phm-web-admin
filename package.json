@@ -14,7 +14,8 @@
     "test:unit": "jest --clearCache && vue-cli-service test:unit",
     "test:ci": "npm run lint && npm run test:unit",
     "publish": "npx lerna publish",
-    "new-version": "npx lerna version --conventional-commits","release": "standard-version",
+    "new-version": "npx lerna version --conventional-commits",
+    "release": "standard-version",
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
     "release:major": "standard-version --release-as major"

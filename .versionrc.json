@@ -9,6 +9,6 @@
     {"type": "perf", "hidden": true},
     {"type": "test", "hidden": true}
   ],
-  "commitUrlFormat": "https://github.com/Ellipse120/phm-web-admin/commits/{{hash}}",
+  "commitUrlFormat": "https://github.com/Ellipse120/phm-web-admin/commit/{{hash}}",
   "compareUrlFormat": "https://github.com/Ellipse120/phm-web-admin/compare/{{previousTag}}...{{currentTag}}"
 }

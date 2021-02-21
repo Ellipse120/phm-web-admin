@@ -90,7 +90,6 @@ export const asyncRoutes = [
     path: '/example',
     component: Layout,
     redirect: '/example/table1',
-    name: 'Example',
     meta: { title: '健康监测', icon: 'el-icon-s-help' },
     children: [
       {
@@ -117,18 +116,17 @@ export const asyncRoutes = [
     path: '/example2',
     component: Layout,
     redirect: '/example2/table',
-    name: 'Example',
     meta: { title: '预警预测', icon: 'el-icon-s-help' },
     children: [
       {
         path: 'table2',
-        name: 'Table',
+        name: 'Table2',
         component: () => import('@/views/table/index'),
         meta: { title: '故障预警' }
       },
       {
         path: 'tree2',
-        name: 'Tree',
+        name: 'Tree2',
         component: () => import('@/views/tree/index'),
         meta: { title: '跟踪处置' }
       }
@@ -151,54 +149,53 @@ export const asyncRoutes = [
     path: '/example3',
     component: Layout,
     redirect: '/example3/table',
-    name: 'Example',
     meta: { title: '轮对镟修', icon: 'el-icon-s-help' },
     children: [
       {
         path: 'table3',
-        name: 'Table',
+        name: 'Table3',
         component: () => import('@/views/table/index'),
         meta: { title: '换轮轮廓计划' }
       },
       {
         path: 'tree3',
-        name: 'Tree',
+        name: 'Tree3',
         component: () => import('@/views/tree/index'),
         meta: { title: '参数趋势分析' }
       },
       {
         path: 'tree4',
-        name: 'Tree',
+        name: 'Tree4',
         component: () => import('@/views/tree/index'),
         meta: { title: '车轮多边形监测' }
       },
       {
         path: 'tree5',
-        name: 'Tree',
+        name: 'Tree5',
         component: () => import('@/views/tree/index'),
         meta: { title: '等效锥度监控' }
       },
       {
         path: 'table4',
-        name: 'Table',
+        name: 'Table4',
         component: () => import('@/views/table/index'),
         meta: { title: '接触疲劳监控' }
       },
       {
         path: 'tree6',
-        name: 'Tree',
+        name: 'Tree6',
         component: () => import('@/views/tree/index'),
         meta: { title: '磨耗规律分析' }
       },
       {
         path: 'tree7',
-        name: 'Tree',
+        name: 'Tree7',
         component: () => import('@/views/tree/index'),
         meta: { title: '镟修建议计划编制' }
       },
       {
         path: 'tree8',
-        name: 'Tree',
+        name: 'Tree8',
         component: () => import('@/views/tree/index'),
         meta: { title: '径向跳动监控' }
       }
@@ -208,18 +205,17 @@ export const asyncRoutes = [
     path: '/example1',
     component: Layout,
     redirect: '/example1/table5',
-    name: 'Example',
     meta: { title: '应急辅助', icon: 'el-icon-s-help' },
     children: [
       {
         path: 'table5',
-        name: 'Table',
+        name: 'Table5',
         component: () => import('@/views/table/index'),
         meta: { title: '全景图' }
       },
       {
         path: 'tree9',
-        name: 'Tree',
+        name: 'Tree9',
         component: () => import('@/views/tree/index'),
         meta: { title: '应急指挥辅助模块' }
       }
@@ -232,7 +228,7 @@ export const asyncRoutes = [
     children: [
       {
         path: 'dashboard',
-        name: 'Dashboard',
+        name: 'Dashboard2',
         component: () => import('@/views/dashboard/index'),
         meta: { title: '数据分析' }
       }
@@ -242,36 +238,35 @@ export const asyncRoutes = [
     path: '/example6',
     component: Layout,
     redirect: '/example6/table6',
-    name: 'Example',
     meta: { title: '维修支持', icon: 'el-icon-s-help' },
     children: [
       {
         path: 'table6',
-        name: 'Table',
+        name: 'Table6',
         component: () => import('@/views/table/index'),
         meta: { title: '重点故障管理' }
       },
       {
         path: 'tree10',
-        name: 'Tree',
+        name: 'Tree10',
         component: () => import('@/views/tree/index'),
         meta: { title: '机检一级修管理' }
       },
       {
         path: 'table7',
-        name: 'Table',
+        name: 'Table7',
         component: () => import('@/views/table/index'),
         meta: { title: '修程修制' }
       },
       {
         path: 'tree11',
-        name: 'Tree',
+        name: 'Tree11',
         component: () => import('@/views/tree/index'),
         meta: { title: '高级修送修卡控' }
       },
       {
         path: 'tree12',
-        name: 'Tree',
+        name: 'Tree12',
         component: () => import('@/views/tree/index'),
         meta: { title: '健康评估' }
       }
@@ -281,48 +276,47 @@ export const asyncRoutes = [
     path: '/example7',
     component: Layout,
     redirect: '/example7/table',
-    name: 'Example',
     meta: { title: '系统管理', icon: 'el-icon-s-help' },
     children: [
       {
         path: 'table8',
-        name: 'Table',
+        name: 'Table8',
         component: () => import('@/views/table/index'),
         meta: { title: '车型管理' }
       },
       {
         path: 'tree13',
-        name: 'Tree',
+        name: 'Tree13',
         component: () => import('@/views/tree/index'),
         meta: { title: '修程管理' }
       },
       {
         path: 'tree14',
-        name: 'Tree',
+        name: 'Tree14',
         component: () => import('@/views/tree/index'),
         meta: { title: '实时监控' }
       },
       {
         path: 'tree15',
-        name: 'Tree',
+        name: 'Tree15',
         component: () => import('@/views/tree/index'),
         meta: { title: '用户管理' }
       },
       {
         path: 'tree16',
-        name: 'Tree',
+        name: 'Tree16',
         component: () => import('@/views/tree/index'),
         meta: { title: '组织机构' }
       },
       {
         path: 'tree17',
-        name: 'Tree',
+        name: 'Tree17',
         component: () => import('@/views/tree/index'),
         meta: { title: '修改密码' }
       },
       {
         path: 'tree18',
-        name: 'Tree',
+        name: 'Tree18',
         component: () => import('@/views/tree/index'),
         meta: { title: '接口日志' }
       }

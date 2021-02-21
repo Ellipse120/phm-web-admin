@@ -14,7 +14,10 @@
     "test:unit": "jest --clearCache && vue-cli-service test:unit",
     "test:ci": "npm run lint && npm run test:unit",
     "publish": "npx lerna publish",
-    "new-version": "npx lerna version --conventional-commits"
+    "new-version": "npx lerna version --conventional-commits","release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major"
   },
   "workspaces": [
     "packages/*",
@@ -77,6 +80,7 @@
     "sass-loader": "8.0.2",
     "script-ext-html-webpack-plugin": "2.1.3",
     "serve-static": "1.13.2",
+    "standard-version": "^9.1.1",
     "svg-sprite-loader": "4.1.3",
     "svgo": "1.2.2",
     "vue-template-compiler": "2.6.10"

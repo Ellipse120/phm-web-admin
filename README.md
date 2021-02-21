@@ -1,6 +1,6 @@
 # PHM-WEB-ADMIN
 
-> Vue.js & Element UI & Axios VirtualScroll & Iconfont & Permission Control & Lint
+> Lerna & Vue.js & Element UI & Axios & VirtualScroll & Iconfont & Permission Control & Lint
 
 **Live demo:** http://todo
 

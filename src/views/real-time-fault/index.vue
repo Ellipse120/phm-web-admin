@@ -77,7 +77,7 @@
 <script>
 export default {
   name: 'RealTimeFault',
-  data() {
+  data () {
     return {
       list: [
         {
@@ -147,11 +147,11 @@ export default {
     }
   },
   methods: {
-    handleCurrentChange(currentPage) {
+    handleCurrentChange (currentPage) {
       console.log(currentPage, ' currentPage')
     },
 
-    handleSizeChange(pageSize) {
+    handleSizeChange (pageSize) {
       console.log(pageSize, 'pageSize')
     }
   }

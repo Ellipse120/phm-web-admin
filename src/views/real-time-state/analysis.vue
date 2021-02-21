@@ -2,20 +2,20 @@
   <div class="app-container">
     <el-row :gutter="10" class="mb-10">
       <el-col :xs="12" :sm="6" :md="6" :lg="6" :xl="4">
-        <el-input placeholder="车组号" title="车组号"/>
+        <el-input placeholder="车组号" title="车组号" />
       </el-col>
       <el-col :xs="12" :sm="6" :md="6" :lg="6" :xl="4">
-        <el-input placeholder="故障代码" title="故障代码"/>
+        <el-input placeholder="故障代码" title="故障代码" />
       </el-col>
       <el-col :xs="12" :sm="6" :md="6" :lg="6" :xl="4">
-        <el-input type="textarea" autosize placeholder="故障描述" title="故障描述"/>
+        <el-input type="textarea" autosize placeholder="故障描述" title="故障描述" />
       </el-col>
       <el-col :xs="12" :sm="6" :md="6" :lg="6" :xl="4">
-        <el-input placeholder="故障发生时间" title="故障发生时间"/>
+        <el-input placeholder="故障发生时间" title="故障发生时间" />
       </el-col>
       <el-col :xs="12" :sm="6" :md="6" :lg="6" :xl="4">
         <el-select v-model="trainId" clearable filterable remote :filter-method="customFilter">
-          <recycle-scroller style="height: 100px;overflow-y: auto;width: 100%;" :items="filteredTrains" :item-size="32" key-field="key" v-slot="{ item }">
+          <recycle-scroller v-slot="{ item }" style="height: 100px;overflow-y: auto;width: 100%;" :items="filteredTrains" :item-size="32" key-field="key">
             <el-option :key="item.key" :value="item.key" :label="item.value" />
           </recycle-scroller>
         </el-select>
@@ -95,7 +95,7 @@ export default {
   components: {
     'recycle-scroller': RecycleScroller
   },
-  data() {
+  data () {
     return {
       trainId: null,
       list: [],
@@ -104,18 +104,18 @@ export default {
     }
   },
   watch: {
-    trainId: function(newVal, oldVal) {
+    trainId: function (newVal, oldVal) {
       if (!newVal) {
         this.filteredTrains = this.trains
       }
     }
   },
-  created() {
+  created () {
     this.trains = generateList(20000)
     this.filteredTrains = [...this.trains]
   },
   methods: {
-    customFilter(v) {
+    customFilter (v) {
       if (!v) {
         this.filteredTrains = [...this.trains]
       }
@@ -125,11 +125,11 @@ export default {
       // return true
     },
 
-    handleCurrentChange(currentPage) {
+    handleCurrentChange (currentPage) {
       console.log(currentPage, ' currentPage')
     },
 
-    handleSizeChange(pageSize) {
+    handleSizeChange (pageSize) {
       console.log(pageSize, 'pageSize')
     }
   }

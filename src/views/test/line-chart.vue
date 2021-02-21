@@ -38,7 +38,7 @@ export default {
     LineChart,
     WebMap
   },
-  data() {
+  data () {
     return {
       lineChartData: lineChartData.newVisitis
     }

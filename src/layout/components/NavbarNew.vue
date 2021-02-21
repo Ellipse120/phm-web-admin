@@ -38,7 +38,7 @@ export default {
   components: {
     SidebarItemNew
   },
-  data() {
+  data () {
     return {
       onlyOneChild: null,
       activeIndex: '1',
@@ -50,19 +50,19 @@ export default {
     ...mapGetters([
       'permission_routes'
     ]),
-    activeMenu() {
+    activeMenu () {
       const { meta, path } = this.$route
       if (meta.activeMenu) {
         return meta.activeMenu
       }
       return path
     },
-    variables() {
+    variables () {
       return variables
     }
   },
   methods: {
-    hasOneShowingChild(children = [], parent) {
+    hasOneShowingChild (children = [], parent) {
       const showingChildren = children.filter(item => {
         if (item.hidden) {
           return false
@@ -85,7 +85,7 @@ export default {
 
       return false
     },
-    resolvePath(routePath) {
+    resolvePath (routePath) {
       if (isExternal(routePath)) {
         return routePath
       }
@@ -95,7 +95,7 @@ export default {
       return path.resolve(this.basePath, routePath)
     },
 
-    async logout() {
+    async logout () {
       await this.$store.dispatch('user/logout')
       this.$router.push(`/login?redirect=${this.$route.fullPath}`)
     }

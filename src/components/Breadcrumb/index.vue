@@ -13,32 +13,32 @@
 import pathToRegexp from 'path-to-regexp'
 
 export default {
-  data() {
+  data () {
     return {
       levelList: null
     }
   },
   watch: {
-    $route() {
+    $route () {
       this.getBreadcrumb()
     }
   },
-  created() {
+  created () {
     this.getBreadcrumb()
   },
   methods: {
-    getBreadcrumb() {
+    getBreadcrumb () {
       // only show routes with meta.title
       const matched = this.$route.matched.filter(item => item.meta && item.meta.title)
 
       this.levelList = matched.filter(item => item.meta && item.meta.title && item.meta.breadcrumb !== false)
     },
-    pathCompile(path) {
+    pathCompile (path) {
       const { params } = this.$route
       const toPath = pathToRegexp.compile(path)
       return toPath(params)
     },
-    handleLink(item) {
+    handleLink (item) {
       const { redirect, path } = item
       if (redirect) {
         this.$router.push(redirect)

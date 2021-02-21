@@ -7,7 +7,7 @@ import { loadModules } from 'esri-loader'
 
 export default {
   name: 'WebMap',
-  mounted() {
+  mounted () {
     // lazy load the required ArcGIS API for JavaScript modules and CSS
     loadModules(['esri/Map', 'esri/views/MapView'], { css: true })
       .then(([ArcGISMap, MapView]) => {
@@ -23,7 +23,7 @@ export default {
         })
       })
   },
-  beforeDestroy() {
+  beforeDestroy () {
     if (this.view) {
       // destroy the map view
       this.view.container = null

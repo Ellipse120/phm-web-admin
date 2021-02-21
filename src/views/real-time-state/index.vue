@@ -20,7 +20,7 @@ export default {
     condition: () => import('./condition'),
     information: () => import('./information')
   },
-  data() {
+  data () {
     return {
       tabs: [
         {

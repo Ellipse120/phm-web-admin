@@ -53,7 +53,7 @@ let source
 
 export default {
   filters: {
-    statusFilter(status) {
+    statusFilter (status) {
       const statusMap = {
         published: 'success',
         draft: 'gray',
@@ -62,13 +62,13 @@ export default {
       return statusMap[status]
     }
   },
-  data() {
+  data () {
     return {
       list: null,
       listLoading: true
     }
   },
-  created() {
+  created () {
     this.fetchData()
   },
   methods: {
@@ -80,7 +80,7 @@ export default {
       })
     },
 
-    async getDetail () {
+    async getDetail (id) {
       source = CancelToken.source()
       const res = await getById(id, source)
       console.log(res)

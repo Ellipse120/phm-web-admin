@@ -1,15 +1,15 @@
 export default {
   computed: {
-    device() {
+    device () {
       return this.$store.state.app.device
     }
   },
-  mounted() {
+  mounted () {
     // In order to fix the click on menu on the ios device will trigger the mouseleave bug
     this.fixBugIniOS()
   },
   methods: {
-    fixBugIniOS() {
+    fixBugIniOS () {
       const $subMenu = this.$refs.subMenu
       if ($subMenu) {
         const handleMouseleave = $subMenu.handleMouseleave

@@ -1,8 +1,8 @@
 {
   "name": "phm-web",
   "version": "1.0.0",
-  "description": "动车组健康管理与运维决策系统",
-  "author": "申铁信息",
+  "description": "template",
+  "author": "ellipse120",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",

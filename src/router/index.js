@@ -44,7 +44,7 @@ export const constantRoutes = [
     path: '/',
     component: Layout,
     hidden: true,
-    redirect: '/example/table1'
+    redirect: '/temp-path/real-time-fault'
   },
   {
     path: '/temp-path',
@@ -54,17 +54,11 @@ export const constantRoutes = [
     meta: { title: '数据查看' },
     children: [
       {
-        path: '/real-time-fault',
+        path: 'real-time-fault',
         name: 'RealTimeFault',
-        component: () => import('@/views/real-time-state/mock'),
+        component: () => import('@/views/real-time-state/monitor'),
         meta: { title: '实时故障' }
       },
-      // {
-      //   path: 'real-time-gps',
-      //   name: 'RealTimeGPS',
-      //   component: () => import('@/views/real-time-gps/index'),
-      //   meta: { title: '实时GPS' }
-      // },
       {
         path: 'wtds-resolution-failure-detail',
         name: 'WTDSResolutionFailureDetail',
@@ -109,6 +103,12 @@ export const asyncRoutes = [
         name: 'Test',
         component: () => import('@/views/test/line-chart'),
         meta: { title: 'ECharts' }
+      },
+      {
+        path: 'mirage-todos',
+        name: 'MirageTodos',
+        component: () => import('@/views/mirage-todos'),
+        meta: { title: 'MirageTodos' }
       }
     ]
   },

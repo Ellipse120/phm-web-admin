@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/Ellipse120/phm-web-admin/compare/v1.1.0...v1.2.0) (2021-03-05)
+
+
+### Features
+
+* using `mirage` mock API ([7372edf](https://github.com/Ellipse120/phm-web-admin/commit/7372edfd4780dd7c30545fda204666cdc8f8666c))
+
 ## [1.1.0](https://github.com/Ellipse120/phm-web-admin/compare/v1.0.0...v1.1.0) (2021-02-21)
 
 

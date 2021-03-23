@@ -5,15 +5,17 @@ module.exports = {
       2,
       'always',
       [
-        'feat', // 新功能（feature）
+        'chore', // 发版
+        'build', // 构建相关或者外部依赖、脚本
+        'feat', // 新功能(feature)
         'fix', // 修补bug
-        'docs', // 文档（documentation）
-        'style', // 格式（不影响代码运行的变动）
-        'refactor', // 重构（即不是新增功能，也不是修改bug的代码变动）
-        'test', // 增加测试
+        'docs', // 文档(documentation)
+        'style', // 格式(不影响代码运行的变动)
+        'refactor', // 重构(即不是新增功能，也不是修改bug的代码变动)
+        'perf', // 代码性能改进
+        'test', // 测试相关内容
         'revert', // 回滚
-        'config', // 构建过程或辅助工具的变动
-        'chore' // 其他改动
+        'config' // 构建过程或辅助工具的配置变动
       ]
     ],
     'type-empty': [2, 'never'], // 提交不符合规范时,也可以提交,但是会有警告

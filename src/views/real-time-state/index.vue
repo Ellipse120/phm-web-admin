@@ -7,12 +7,14 @@
         </el-tab-pane>
       </template>
     </el-tabs>
+    <a-button type="danger">ant button</a-button>
   </div>
 </template>
 
 <script>
 export default {
   name: 'RealTimeState',
+
   components: {
     analysis: () => import('./analysis'),
     monitor: () => import('./monitor'),

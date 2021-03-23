@@ -25,6 +25,31 @@ Vue.use(Router)
  */
 
 /**
+ * Lazy-loads view components, but with better UX. A loading view
+ * will be used if the component takes a while to load, falling
+ * back to a timeout view in case the page fails to load. You can
+ * use this component to lazy-load a route with:
+ * @param asyncView
+ * @returns {Promise<{functional: boolean, render(*, {data?: *, children?: *}): *}>|VNode}
+ */
+function lazyLoadView (asyncView) {
+  const asyncHandler = () => ({
+    component: asyncView,
+    loading: require('@/views/loading').default,
+    delay: 2e2, // Default: 200 (milliseconds).
+    error: require('@/views/error').default,
+    timeout: 4e4 // Default: Infinity (milliseconds). Time before giving up trying to load the component.
+  })
+
+  return Promise.resolve({
+    functional: true,
+    render (h, { data, children }) {
+      return h(asyncHandler, data, children)
+    }
+  })
+}
+
+/**
  * constantRoutes
  * a base page that does not have permission requirements
  * all roles can be accessed
@@ -56,19 +81,19 @@ export const constantRoutes = [
       {
         path: 'real-time-fault',
         name: 'RealTimeFault',
-        component: () => import('@/views/real-time-state/monitor'),
+        component: () => lazyLoadView(import('@/views/real-time-state/monitor')),
         meta: { title: '实时故障' }
       },
       {
         path: 'wtds-resolution-failure-detail',
         name: 'WTDSResolutionFailureDetail',
-        component: () => import('@/views/wtds-resolution-failure-detail/index'),
+        component: () => lazyLoadView(import('@/views/wtds-resolution-failure-detail/index')),
         meta: { title: 'WTDS解析失败详情' }
       },
       {
         path: 'real-time-state',
         name: 'RealTimeState',
-        component: () => import('@/views/real-time-state/index'),
+        component: () => lazyLoadView(import('@/views/real-time-state/index')),
         meta: { title: '实时状态' }
       }
     ]
@@ -76,10 +101,10 @@ export const constantRoutes = [
 ]
 
 /**
- * asyncRoutes
+ * checkPermissionRoutes
  * the routes that need to be dynamically loaded based on user roles
  */
-export const asyncRoutes = [
+export const checkPermissionRoutes = [
   {
     path: '/example',
     component: Layout,
@@ -89,25 +114,25 @@ export const asyncRoutes = [
       {
         path: 'table1',
         name: 'Table',
-        component: () => import('@/views/table/index'),
+        component: () => lazyLoadView(import('@/views/table/index')),
         meta: { title: '状态全景' }
       },
       {
         path: 'tree1',
         name: 'Tree',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '车载故障' }
       },
       {
         path: 'test',
         name: 'Test',
-        component: () => import('@/views/test/line-chart'),
+        component: () => lazyLoadView(import('@/views/test/line-chart')),
         meta: { title: 'ECharts' }
       },
       {
         path: 'mirage-todos',
         name: 'MirageTodos',
-        component: () => import('@/views/mirage-todos'),
+        component: () => lazyLoadView(import('@/views/mirage-todos')),
         meta: { title: 'MirageTodos' }
       }
     ]
@@ -121,13 +146,13 @@ export const asyncRoutes = [
       {
         path: 'table2',
         name: 'Table2',
-        component: () => import('@/views/table/index'),
+        component: () => lazyLoadView(import('@/views/table/index')),
         meta: { title: '故障预警' }
       },
       {
         path: 'tree2',
         name: 'Tree2',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '跟踪处置' }
       }
     ]
@@ -140,7 +165,7 @@ export const asyncRoutes = [
       {
         path: 'dashboard',
         name: 'Dashboard',
-        component: () => import('@/views/dashboard/index'),
+        component: () => lazyLoadView(import('@/views/dashboard/index')),
         meta: { title: '视情维修' }
       }
     ]
@@ -154,49 +179,49 @@ export const asyncRoutes = [
       {
         path: 'table3',
         name: 'Table3',
-        component: () => import('@/views/table/index'),
+        component: () => lazyLoadView(import('@/views/table/index')),
         meta: { title: '换轮轮廓计划' }
       },
       {
         path: 'tree3',
         name: 'Tree3',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '参数趋势分析' }
       },
       {
         path: 'tree4',
         name: 'Tree4',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '车轮多边形监测' }
       },
       {
         path: 'tree5',
         name: 'Tree5',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '等效锥度监控' }
       },
       {
         path: 'table4',
         name: 'Table4',
-        component: () => import('@/views/table/index'),
+        component: () => lazyLoadView(import('@/views/table/index')),
         meta: { title: '接触疲劳监控' }
       },
       {
         path: 'tree6',
         name: 'Tree6',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '磨耗规律分析' }
       },
       {
         path: 'tree7',
         name: 'Tree7',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '镟修建议计划编制' }
       },
       {
         path: 'tree8',
         name: 'Tree8',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '径向跳动监控' }
       }
     ]
@@ -210,13 +235,13 @@ export const asyncRoutes = [
       {
         path: 'table5',
         name: 'Table5',
-        component: () => import('@/views/table/index'),
+        component: () => lazyLoadView(import('@/views/table/index')),
         meta: { title: '全景图' }
       },
       {
         path: 'tree9',
         name: 'Tree9',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '应急指挥辅助模块' }
       }
     ]
@@ -229,7 +254,7 @@ export const asyncRoutes = [
       {
         path: 'dashboard',
         name: 'Dashboard2',
-        component: () => import('@/views/dashboard/index'),
+        component: () => lazyLoadView(import('@/views/dashboard/index')),
         meta: { title: '数据分析' }
       }
     ]
@@ -243,31 +268,31 @@ export const asyncRoutes = [
       {
         path: 'table6',
         name: 'Table6',
-        component: () => import('@/views/table/index'),
+        component: () => lazyLoadView(import('@/views/table/index')),
         meta: { title: '重点故障管理' }
       },
       {
         path: 'tree10',
         name: 'Tree10',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '机检一级修管理' }
       },
       {
         path: 'table7',
         name: 'Table7',
-        component: () => import('@/views/table/index'),
+        component: () => lazyLoadView(import('@/views/table/index')),
         meta: { title: '修程修制' }
       },
       {
         path: 'tree11',
         name: 'Tree11',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '高级修送修卡控' }
       },
       {
         path: 'tree12',
         name: 'Tree12',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '健康评估' }
       }
     ]
@@ -281,43 +306,43 @@ export const asyncRoutes = [
       {
         path: 'table8',
         name: 'Table8',
-        component: () => import('@/views/table/index'),
+        component: () => lazyLoadView(import('@/views/table/index')),
         meta: { title: '车型管理' }
       },
       {
         path: 'tree13',
         name: 'Tree13',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '修程管理' }
       },
       {
         path: 'tree14',
         name: 'Tree14',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '实时监控' }
       },
       {
         path: 'tree15',
         name: 'Tree15',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '用户管理' }
       },
       {
         path: 'tree16',
         name: 'Tree16',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '组织机构' }
       },
       {
         path: 'tree17',
         name: 'Tree17',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '修改密码' }
       },
       {
         path: 'tree18',
         name: 'Tree18',
-        component: () => import('@/views/tree/index'),
+        component: () => lazyLoadView(import('@/views/tree/index')),
         meta: { title: '接口日志' }
       }
     ]

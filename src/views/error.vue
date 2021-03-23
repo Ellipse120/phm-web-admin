@@ -1,11 +1,13 @@
 <template>
-  <div id="app">
-    <router-view />
-  </div>
+  <div>Error</div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'Error'
 }
 </script>
+
+<style scoped>
+
+</style>

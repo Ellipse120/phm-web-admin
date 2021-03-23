@@ -11,7 +11,7 @@
       </div>
       <div v-loading="isLoading">
         <el-checkbox-group v-model="doneList" @change="handleCheckedChange">
-          <el-checkbox v-for="item in list" style="display: block;" :key="item.id" :checked="item.isDone" :label="item.id">
+          <el-checkbox v-for="item in list" :key="item.id" style="display: block;" :checked="item.isDone" :label="item.id">
             <em>{{ item.text }}</em>
             <el-button type="text" icon="el-icon-minus" @click="doDelete(item)" />
           </el-checkbox>

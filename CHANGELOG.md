@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/Ellipse120/phm-web-admin/compare/v1.2.0...v1.3.0) (2021-03-23)
+
+
+### Features
+
+* async load components ([0da9a8c](https://github.com/Ellipse120/phm-web-admin/commit/0da9a8c22361f98825f7a2f545e3cc912e23d45e))
+
 ## [1.2.0](https://github.com/Ellipse120/phm-web-admin/compare/v1.1.0...v1.2.0) (2021-03-05)
 
 

@@ -1,6 +1,6 @@
 # PHM-WEB-ADMIN
 
-> Lerna & Vue.js & Element UI & Axios & VirtualScroll & Iconfont & Permission Control & Lint
+> Lerna & Husky & CommitLint & Vue.js & Element UI & And-Design-Vue & Axios & Tinymce & VirtualScroll & Iconfont & Permission Control & Lint
 
 **Live demo:** http://todo
 
@@ -9,9 +9,6 @@
 ```bash
 # clone the project
 git clone https://todo.git
-
-# enter the project directory
-cd phm-web
 
 # 安装依赖
 npm install
@@ -38,12 +35,6 @@ npm run preview
 
 # preview the release environment effect + static resource analysis
 npm run preview -- --report
-
-# code format check
-npm run lint
-
-# code format check and auto fix
-npm run lint -- --fix
 ```
 
 ## Browsers support
